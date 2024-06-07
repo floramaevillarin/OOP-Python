@@ -1,8 +1,0 @@
-Creating a model, in the context of data science and machine learning, involves building a mathematical representation of a real-world process or system based on available data. The process typically includes several steps:
-Data Collection
-Data Preprocessing
-Feature Engineering
-Model Selection
-Model Training
-Model Evaluation
-Model Tuning
