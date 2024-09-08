@@ -1,66 +1,76 @@
-Project Structure
-The codebase is divided into three primary components:
+# Project Structure
 
-users.py
-theDevices.py
-main.py
-Each component plays a vital role in the application's functionality. Additionally, two supporting files are included:
+The project is divided into three main modules:
 
-users.pkl: Stores user authentication data.
-devices.txt: Contains information about devices.
-Components Overview
-1. User Class (users.py)
-This class manages user authentication, including login attempts and user registration.
+- **`users.py`**
+- **`theDevices.py`**
+- **`main.py`**
 
-Initialization:
-The __init__(self) method loads user data from the users.pkl file and sets a default of 3 login attempts.
+Additionally, two supporting files are used:
+- **`users.pkl`**: Stores user authentication data.
+- **`devices.txt`**: Contains information about devices.
 
-Load:
-load_users(self) loads user data from the users.pkl file.
+## Components Overview
 
-Login:
-login(self) allows users to input their username and password, verifying credentials against the data in users.pkl. It also enforces a 3-attempt limit.
+### 1. `User` Class (`users.py`)
+Handles user authentication and login processes.
 
-Register:
-register_user(self) registers a new user by saving their credentials to the file.
+- **Initialization**:  
+  Initializes user data from the `users.pkl` file and sets the default login attempts to 3.
 
-Save User:
-save_users(self) saves the user credentials to the users.pkl file.
+- **Load Users**:  
+  `load_users(self)` loads user data from the `users.pkl` file.
 
-Note: The default admin credentials are username: admin and password: Pyth0n2023.
+- **Login**:  
+  `login(self)` verifies the username and password, allowing a maximum of 3 attempts.
 
-2. DeviceManagement Class (theDevices.py)
-This class manages device-related operations, including viewing, adding, updating, deleting, and searching for devices.
+- **Register User**:  
+  `register_user(self)` registers a new user and saves their credentials.
 
-Initialization:
-The __init__(self) method initializes the device list by loading data from devices.txt.
+- **Save Users**:  
+  `save_users(self)` saves user credentials to the `users.pkl` file.
 
-Load:
-load_devices(self) loads devices from the devices.txt file.
+> **Note**: Default credentials are `username: admin` and `password: Pyth0n2023`.
 
-Save:
-save_device(self) saves the updated list of devices back to devices.txt.
+---
 
-View:
-view_devices(self) displays all devices currently in the list.
+### 2. `DeviceManagement` Class (`theDevices.py`)
+Manages device-related operations, including viewing, adding, updating, deleting, and searching for devices.
 
-Add:
-add_device(self, name) adds a new device if it doesn't already exist.
+- **Initialization**:  
+  Loads device data from the `devices.txt` file.
 
-Delete:
-delete_device(self, device_to_delete) removes a device from the list based on the provided code.
+- **Load Devices**:  
+  `load_devices(self)` loads the list of devices from `devices.txt`.
 
-Update:
-update_device(self, device_to_update, new_name) updates a device's name from device_to_update to new_name.
+- **Save Devices**:  
+  `save_device(self)` saves the updated device list back to `devices.txt`.
 
-Validate:
-validate_device(self, old_name) verifies whether a device exists in devices.txt.
+- **View Devices**:  
+  `view_devices(self)` displays all devices.
 
-Search:
-search_device(self, keyword) searches for devices that match a given keyword.
+- **Add Device**:  
+  `add_device(self, name)` adds a new device if it doesn't already exist.
 
-Menu:
-main_menu(self) displays a menu of device management options, processes user input, and executes the corresponding action.
+- **Delete Device**:  
+  `delete_device(self, device_to_delete)` deletes a device based on its code.
 
-3. Main Function (main.py)
-The main.py script orchestrates user interaction. It initializes instances of the User and DeviceManagement classes. Once the user successfully logs in, the device management menu is presented for further actions.
+- **Update Device**:  
+  `update_device(self, device_to_update, new_name)` updates a device's name.
+
+- **Validate Device**:  
+  `validate_device(self, old_name)` checks if a device exists in `devices.txt`.
+
+- **Search Devices**:  
+  `search_device(self, keyword)` searches for devices containing the specified keyword.
+
+- **Device Menu**:  
+  `main_menu(self)` displays a menu for managing devices and executing user-selected actions.
+
+---
+
+### 3. Main Function (`main.py`)
+The main function drives user interaction. It initializes the `User` and `DeviceManagement` classes. Upon successful user login, the device management menu is presented, allowing users to perform various actions on devices.
+
+---
+
